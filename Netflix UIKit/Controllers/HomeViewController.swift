@@ -22,8 +22,24 @@ class HomeViewController: UIViewController {
         
         homeFeedTableView.delegate = self
         homeFeedTableView.dataSource = self
+        
+        configureNavBar()
+        
         let headerView = HeroHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTableView.tableHeaderView = headerView
+    }
+    
+    private func configureNavBar(){
+        
+        
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "n.square.fill"), style: .done, target: self, action: nil)
+        //navigationItem.leftBarButtonItem = barButtonItem
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
+            UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
+        ]
     }
     
     override func viewDidLayoutSubviews() {
